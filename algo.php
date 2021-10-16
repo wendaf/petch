@@ -38,7 +38,7 @@ class algo {
         $parity = 0;
         
         echo "<tbody>";
-        // loop to show all the line horizontaly
+        // loop to show all the line horizontally
         for ($i = 0; $i < $this->nbrLine; $i++) {
             echo "<tr>";
             // loop on all disk
@@ -46,12 +46,12 @@ class algo {
                 echo "<td>Block ";
                 if ($j === $end)// check if the loop is at the end of the line
                 {
-                  // loop at disk but whitout the last
-                  for ($k = 0; $k < $this->nbrDisk - 1; $k++) {
-                      echo $this->letters[$parity++];
-                      if ($parity >= 26) {$parity = 0;}// condition to restart alphabet after "Z"
-                      if ($k < $this->nbrDisk - 2) {echo " + ";}// condition to add "+" between value
-                  }
+                    // loop at disk but whiteout the last
+                    for ($k = 0; $k < $this->nbrDisk - 1; $k++) {
+                        echo $this->letters[$parity++];
+                        if ($parity >= 26) {$parity = 0;}// condition to restart alphabet after "Z"
+                        if ($k < $this->nbrDisk - 2) {echo " + ";}// condition to add "+" between value
+                    }
                 }
                 else
                 {
@@ -73,7 +73,7 @@ class algo {
 }
 
 // check if the url is correctly written
-if (($_GET["row"] && $_GET["col"]) && $_GET["col"] >= 3)
+if ($_GET["row"] && $_GET["col"] && $_GET["col"] >= 3 && is_numeric($_GET["row"]))
 {
     $algo = new algo($_GET["row"], $_GET["col"]);
 }
